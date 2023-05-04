@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="connection-bbdd">
+    <CLASSES>
+      <root url="file://C:/Program Files/Apache/Commons/connection-bbdd" />
+      <root url="file://C:/Program Files/Apache/Commons/Plugin DB40-20230426" />
+      <root url="file://C:/Program Files/Apache/Commons/commons-io-2.11.0" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://C:/Program Files/Apache/Commons/commons-io-2.11.0/docs" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="file://C:/Program Files/Apache/Commons/commons-io-2.11.0" />
+    </SOURCES>
+    <jarDirectory url="file://C:/Program Files/Apache/Commons/commons-io-2.11.0" recursive="false" />
+    <jarDirectory url="file://C:/Program Files/Apache/Commons/connection-bbdd" recursive="false" />
+    <jarDirectory url="file://C:/Program Files/Apache/Commons/Plugin DB40-20230426" recursive="false" />
+    <jarDirectory url="file://C:/Program Files/Apache/Commons/commons-io-2.11.0" recursive="false" type="SOURCES" />
+  </library>
+</component>
