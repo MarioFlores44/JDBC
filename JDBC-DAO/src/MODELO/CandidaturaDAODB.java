@@ -1,9 +1,8 @@
 package MODELO;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.SQLOutput;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CandidaturaDAODB implements DAODB<Candidatura>{
     @Override
@@ -40,6 +39,7 @@ public class CandidaturaDAODB implements DAODB<Candidatura>{
 
             ResultSet rs = preparedStmt.executeQuery();
             if (rs.next()) {
+                c.setCandidaturaId(rs.getInt("candidatura_id"));
                 c.setEleccioId(rs.getInt("eleccio_id"));
                 c.setCodiCandidatura(rs.getString("codi_candidatura"));
                 c.setNomCurt(rs.getString("nom_curt"));
@@ -116,12 +116,43 @@ public class CandidaturaDAODB implements DAODB<Candidatura>{
 
     @Override
     public int count() {
-        return 0;
+        String query = "SELECT COUNT(*) FROM candidatures";
+        try {
+            PreparedStatement preparedStmt = JDBC.con.prepareStatement(query);
+
+            ResultSet rs = preparedStmt.executeQuery();
+            if (rs.next()) {
+                return rs.getInt(1);
+            } else return 0;
+        } catch (Exception e) {
+            System.out.println(e);
+            return 0;
+        }
     }
 
     @Override
     public List<Candidatura> all() {
-        return null;
+        List<Candidatura> registros = new ArrayList<>();
+        String query = "SELECT * FROM candidatures";
+        try {
+            PreparedStatement preparedStmt = JDBC.con.prepareStatement(query);
+            ResultSet rs = preparedStmt.executeQuery();
+            while (rs.next()) {
+                Candidatura c = null;
+                c.setCandidaturaId(rs.getInt("candidatura_id"));
+                c.setEleccioId(rs.getInt("eleccio_id"));
+                c.setCodiCandidatura(rs.getString("codi_candidatura"));
+                c.setNomCurt(rs.getString("nom_curt"));
+                c.setNomLlarg(rs.getString("nom_llarg"));
+                c.setCodiAcProvincia(rs.getString("codi_acumulacio_provincia"));
+                c.setCodiAcCA(rs.getString("codi_acumulacio_ca"));
+                c.setCodiAcNacional(rs.getString("codi_acumulacio_nacional"));
+                registros.add(c);
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return registros;
     }
 
 }

@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Candidatura {
     Scanner scan = new Scanner(System.in);
+    int candidaturaId;
     int eleccioId;
     String codiCandidatura;
     String nomCurt;
@@ -105,6 +106,13 @@ public class Candidatura {
     }
 
     //Getters y Setters
+    public void setCandidaturaId(int id) {
+        this.candidaturaId = id;
+    }
+
+    public int getCandidaturaId() {
+        return candidaturaId;
+    }
     public void setEleccioId(int id) {
         this.eleccioId = id;
     }
