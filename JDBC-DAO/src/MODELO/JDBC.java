@@ -10,7 +10,7 @@ public class JDBC {
     public static Connection openCon(String ip, String bd, String usuari, String pswd) {
         con = null;
         try {
-            con = DriverManager.getConnection("jdbc:mysql://"+ ip +":3306/"+ bd, usuari, pswd);
+            con = DriverManager.getConnection("jdbc:mysql://" + ip + "/" + bd + "?serverTimezone=UTC", usuari, pswd);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }

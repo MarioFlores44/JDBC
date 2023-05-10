@@ -43,6 +43,10 @@ public class Candidatura {
         }
     }
 
+    public Candidatura() {
+
+    }
+
     // Comprobantes
     public boolean comprobarEleccioId(int eleccioId) {
         while (eleccioId < 0) {
@@ -102,7 +106,11 @@ public class Candidatura {
 
     @Override
     public String toString(){
-        return "eleccioId:" + eleccioId + "| codiCandidatura:" + codiCandidatura + "| nomCurt:" + nomCurt + "| nomLlarg:" + nomLlarg + "| codiAcProvincia:" + codiAcProvincia + "| codiAcCA:" + codiAcCA + "| codiAcNacional:" + codiAcNacional;
+        System.out.printf("candidatura_id: %2d | eleccio_id: %2d | codi_candidatura: %6s | nom_curt: %50s |" +
+                " nom_llarg: %150s | codi_acumulacio_provincia: %6s | codi_acumulacio_ca: %6s | " +
+                "codi_acumulario_nacional: %6s\n", candidaturaId, eleccioId, codiCandidatura, nomCurt, nomLlarg,
+                codiAcProvincia, codiAcCA, codiAcNacional);
+        return null;
     }
 
     //Getters y Setters

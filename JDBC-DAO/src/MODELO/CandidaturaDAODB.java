@@ -7,8 +7,8 @@ import java.util.List;
 public class CandidaturaDAODB implements DAODB<Candidatura>{
     @Override
     public boolean create(Candidatura c) {
-        String query = "INSERT INTO candidatures (eleccioId,codi_candidatura,nom_curt,nom_llarg," +
-                "codi_acumulacio_provincia,codi_acumulacio_ca,codi_acumulacio_nacional) " +
+        String query = "INSERT INTO candidatures (eleccio_id,codi_candidatura,nom_curt,nom_llarg," +
+                "codi_acumulacio_provincia,codi_acumulacio_ca,codi_acumulario_nacional) " +
                 "VALUES (?,?,?,?,?,?,?)";
         try {
             PreparedStatement preparedStmt = JDBC.con.prepareStatement(query);
@@ -30,8 +30,8 @@ public class CandidaturaDAODB implements DAODB<Candidatura>{
 
     @Override
     public Candidatura read(int id) {
-        String query = "SELECT * FROM candidatures WHERE id = ?";
-        Candidatura c = null;
+        String query = "SELECT * FROM candidatures WHERE candidatura_id = ?";
+        Candidatura c = new Candidatura();
         try {
             PreparedStatement preparedStmt = JDBC.con.prepareStatement(query);
 
@@ -46,7 +46,7 @@ public class CandidaturaDAODB implements DAODB<Candidatura>{
                 c.setNomLlarg(rs.getString("nom_llarg"));
                 c.setCodiAcProvincia(rs.getString("codi_acumulacio_provincia"));
                 c.setCodiAcCA(rs.getString("codi_acumulacio_ca"));
-                c.setCodiAcNacional(rs.getString("codi_acumulacio_nacional"));
+                c.setCodiAcNacional(rs.getString("codi_acumulario_nacional"));
             }
         } catch (Exception e) {
             System.out.println(e);
@@ -57,7 +57,7 @@ public class CandidaturaDAODB implements DAODB<Candidatura>{
     @Override
     public boolean update(Candidatura c, int id) {
         String query = "UPDATE candidatures SET eleccio_id = ?, codi_candidatura = ?, nom_curt = ?, nom_llarg = ?, " +
-                "codi_acumulacio_provincia = ?, codi_acumuladio_ca = ?, codi_acumulacio_nacional = ? WHERE id=?";
+                "codi_acumulacio_provincia = ?, codi_acumulacio_ca = ?, codi_acumulario_nacional = ? WHERE candidatura_id=?";
         try {
             PreparedStatement preparedStmt = JDBC.con.prepareStatement(query);
 
@@ -81,7 +81,7 @@ public class CandidaturaDAODB implements DAODB<Candidatura>{
 
     @Override
     public boolean delete(int id) {
-        String query = "DELETE FROM candidatures WHERE id = ?";
+        String query = "DELETE FROM candidatures WHERE candidatura_id = ?";
 
         try {
             PreparedStatement preparedStmt = JDBC.con.prepareStatement(query);
@@ -98,7 +98,7 @@ public class CandidaturaDAODB implements DAODB<Candidatura>{
 
     @Override
     public boolean exists(int id) {
-        String query = "SELECT * FROM candidatures WHERE id = ?";
+        String query = "SELECT * FROM candidatures WHERE candidatura_id = ?";
         try {
             PreparedStatement preparedStmt = JDBC.con.prepareStatement(query);
 
@@ -138,7 +138,7 @@ public class CandidaturaDAODB implements DAODB<Candidatura>{
             PreparedStatement preparedStmt = JDBC.con.prepareStatement(query);
             ResultSet rs = preparedStmt.executeQuery();
             while (rs.next()) {
-                Candidatura c = null;
+                Candidatura c = new Candidatura();
                 c.setCandidaturaId(rs.getInt("candidatura_id"));
                 c.setEleccioId(rs.getInt("eleccio_id"));
                 c.setCodiCandidatura(rs.getString("codi_candidatura"));
@@ -146,7 +146,7 @@ public class CandidaturaDAODB implements DAODB<Candidatura>{
                 c.setNomLlarg(rs.getString("nom_llarg"));
                 c.setCodiAcProvincia(rs.getString("codi_acumulacio_provincia"));
                 c.setCodiAcCA(rs.getString("codi_acumulacio_ca"));
-                c.setCodiAcNacional(rs.getString("codi_acumulacio_nacional"));
+                c.setCodiAcNacional(rs.getString("codi_acumulario_nacional"));
                 registros.add(c);
             }
         } catch (Exception e) {

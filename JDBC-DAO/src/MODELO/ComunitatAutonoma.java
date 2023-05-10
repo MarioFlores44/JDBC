@@ -32,6 +32,6 @@ public class ComunitatAutonoma {
     }
     @Override
     public String toString(){
-        return "id:" + id + "| nom:" + nom + "| codi ine:" + codi_ine;
+        return "id:" + comunitat_aut_id + "| nom:" + nom + "| codi ine:" + codi_ine;
     }
 }
