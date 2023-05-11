@@ -8,16 +8,15 @@ import java.util.List;
 public class ProvinciaDAODB implements DAODB<Provincia>{
     @Override
     public boolean create(Provincia c) {
-        String query = "INSERT INTO provincies (provincia_id,comunitat_aut_id,nom,codi_ine,num_escons) " +
-                "VALUES (?,?,?,?,?)";
+        String query = "INSERT INTO provincies (comunitat_aut_id,nom,codi_ine,num_escons) " +
+                "VALUES (?,?,?,?)";
         try {
             PreparedStatement preparedStmt = JDBC.con.prepareStatement(query);
 
-            preparedStmt.setInt(1, c.getId());
-            preparedStmt.setInt(2, c.getCA());
-            preparedStmt.setString(3, c.getNom());
-            preparedStmt.setString(4, c.getCodi_ine());
-            preparedStmt.setInt(5, c.getNumEscons());
+            preparedStmt.setInt(1, c.getCA());
+            preparedStmt.setString(2, c.getNom());
+            preparedStmt.setString(3, c.getCodi_ine());
+            preparedStmt.setInt(4, c.getNumEscons());
             preparedStmt.execute();
             return true;
         } catch (Exception e) {
@@ -51,14 +50,13 @@ public class ProvinciaDAODB implements DAODB<Provincia>{
 
     @Override
     public boolean update(Provincia c, int id) {
-        String query = "UPDATE provincies SET provincia_id = ?, nom = ?, codi_ine = ? WHERE comunitat_aut_id=?";
+        String query = "UPDATE provincies SET nom = ?, codi_ine = ? WHERE comunitat_aut_id=?";
         try {
             PreparedStatement preparedStmt = JDBC.con.prepareStatement(query);
 
-            preparedStmt.setInt(1, c.getId());
-            preparedStmt.setString(2, c.getNom());
-            preparedStmt.setString(3, c.getCodi_ine());
-            preparedStmt.setInt(4, id);
+            preparedStmt.setString(1, c.getNom());
+            preparedStmt.setString(2, c.getCodi_ine());
+            preparedStmt.setInt(3, id);
             preparedStmt.execute();
 
             return true;
