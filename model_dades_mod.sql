@@ -14,15 +14,15 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema mydb
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `prog_UF6` DEFAULT CHARACTER SET utf8 ;
+USE `prog_UF6` ;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`comunitats_autonomes`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`comunitats_autonomes` ;
+DROP TABLE IF EXISTS `prog_UF6`.`comunitats_autonomes` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`comunitats_autonomes` (
+CREATE TABLE IF NOT EXISTS `prog_UF6`.`comunitats_autonomes` (
   `comunitat_aut_id` TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
   `nom` VARCHAR(45) NULL,
   `codi_ine` CHAR(2) NOT NULL,
@@ -34,9 +34,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`provincies`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`provincies` ;
+DROP TABLE IF EXISTS `prog_UF6`.`provincies` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`provincies` (
+CREATE TABLE IF NOT EXISTS `prog_UF6`.`provincies` (
   `provincia_id` TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
   `comunitat_aut_id` TINYINT UNSIGNED NOT NULL,
   `nom` VARCHAR(45) NULL,
@@ -56,9 +56,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`municipis`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`municipis` ;
+DROP TABLE IF EXISTS `prog_UF6`.`municipis` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`municipis` (
+CREATE TABLE IF NOT EXISTS `prog_UF6`.`municipis` (
   `municipi_id` SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
   `nom` VARCHAR(100) NULL,
   `codi_ine` CHAR(3) NOT NULL,
@@ -78,9 +78,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`candidatures`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`candidatures` ;
+DROP TABLE IF EXISTS `prog_UF6`.`candidatures` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`candidatures` (
+CREATE TABLE IF NOT EXISTS `prog_UF6`.`candidatures` (
   `candidatura_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `eleccio_id` TINYINT UNSIGNED NOT NULL,
   `codi_candidatura` CHAR(6) NULL,
@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`candidatures` (
   `nom_llarg` VARCHAR(150) NULL COMMENT 'Nom llarg de la candidatura (denominació)',
   `codi_acumulacio_provincia` CHAR(6) NULL COMMENT 'Codi de la candidatura d\'acumulació a nivell provincial.',
   `codi_acumulacio_ca` CHAR(6) NULL COMMENT 'Codi de la candidatura d\'acumulació a nivell de comunitat autònoma',
-  `codi_acumulario_nacional` CHAR(6) NULL,
+  `codi_acumulacio_nacional` CHAR(6) NULL,
   PRIMARY KEY (`candidatura_id`),
   UNIQUE INDEX `uk_eleccions_partits` (`eleccio_id` ASC, `codi_candidatura` ASC)  )
 ENGINE = InnoDB;
@@ -97,9 +97,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`persones`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`persones` ;
+DROP TABLE IF EXISTS `prog_UF6`.`persones` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`persones` (
+CREATE TABLE IF NOT EXISTS `prog_UF6`.`persones` (
   `persona_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `nom` VARCHAR(30) NULL,
   `cog1` VARCHAR(30) NULL,
@@ -115,9 +115,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`candidats`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`candidats` ;
+DROP TABLE IF EXISTS `prog_UF6`.`candidats` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`candidats` (
+CREATE TABLE IF NOT EXISTS `prog_UF6`.`candidats` (
   `candidat_id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
   `candidatura_id` INT UNSIGNED NOT NULL,
   `persona_id` INT UNSIGNED NOT NULL,

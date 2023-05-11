@@ -108,7 +108,7 @@ public class Candidatura {
     public String toString(){
         System.out.printf("candidatura_id: %2d | eleccio_id: %2d | codi_candidatura: %6s | nom_curt: %50s |" +
                 " nom_llarg: %150s | codi_acumulacio_provincia: %6s | codi_acumulacio_ca: %6s | " +
-                "codi_acumulario_nacional: %6s\n", candidaturaId, eleccioId, codiCandidatura, nomCurt, nomLlarg,
+                "codi_acumulacio_nacional: %6s\n", candidaturaId, eleccioId, codiCandidatura, nomCurt, nomLlarg,
                 codiAcProvincia, codiAcCA, codiAcNacional);
         return null;
     }

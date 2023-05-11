@@ -8,7 +8,7 @@ public class CandidaturaDAODB implements DAODB<Candidatura>{
     @Override
     public boolean create(Candidatura c) {
         String query = "INSERT INTO candidatures (eleccio_id,codi_candidatura,nom_curt,nom_llarg," +
-                "codi_acumulacio_provincia,codi_acumulacio_ca,codi_acumulario_nacional) " +
+                "codi_acumulacio_provincia,codi_acumulacio_ca,codi_acumulacio_nacional) " +
                 "VALUES (?,?,?,?,?,?,?)";
         try {
             PreparedStatement preparedStmt = JDBC.con.prepareStatement(query);
@@ -46,7 +46,7 @@ public class CandidaturaDAODB implements DAODB<Candidatura>{
                 c.setNomLlarg(rs.getString("nom_llarg"));
                 c.setCodiAcProvincia(rs.getString("codi_acumulacio_provincia"));
                 c.setCodiAcCA(rs.getString("codi_acumulacio_ca"));
-                c.setCodiAcNacional(rs.getString("codi_acumulario_nacional"));
+                c.setCodiAcNacional(rs.getString("codi_acumulacio_nacional"));
             }
         } catch (Exception e) {
             System.out.println(e);
@@ -57,7 +57,7 @@ public class CandidaturaDAODB implements DAODB<Candidatura>{
     @Override
     public boolean update(Candidatura c, int id) {
         String query = "UPDATE candidatures SET eleccio_id = ?, codi_candidatura = ?, nom_curt = ?, nom_llarg = ?, " +
-                "codi_acumulacio_provincia = ?, codi_acumulacio_ca = ?, codi_acumulario_nacional = ? WHERE candidatura_id=?";
+                "codi_acumulacio_provincia = ?, codi_acumulacio_ca = ?, codi_acumulacio_nacional = ? WHERE candidatura_id=?";
         try {
             PreparedStatement preparedStmt = JDBC.con.prepareStatement(query);
 
@@ -146,7 +146,7 @@ public class CandidaturaDAODB implements DAODB<Candidatura>{
                 c.setNomLlarg(rs.getString("nom_llarg"));
                 c.setCodiAcProvincia(rs.getString("codi_acumulacio_provincia"));
                 c.setCodiAcCA(rs.getString("codi_acumulacio_ca"));
-                c.setCodiAcNacional(rs.getString("codi_acumulario_nacional"));
+                c.setCodiAcNacional(rs.getString("codi_acumulacio_nacional"));
                 registros.add(c);
             }
         } catch (Exception e) {
