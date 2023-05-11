@@ -14,7 +14,9 @@ public class Provincia {
         this.codi_ine = codi_ine;
         this.numEscons = numEscons;
     }
+    public Provincia(){
 
+    }
     // GETTERS I SETTERS
     public void setId(int id){
         this.id = id;

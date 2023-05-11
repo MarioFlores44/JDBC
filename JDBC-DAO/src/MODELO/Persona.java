@@ -17,7 +17,9 @@ public class Persona {
         this.data_naixament = data_naixament;
         this.dni = dni;
     }
+    public Persona(){
 
+    }
     // GETTERS I SETTERS
     public void setId(int id){
         this.id = id;

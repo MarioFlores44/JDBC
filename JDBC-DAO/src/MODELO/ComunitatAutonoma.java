@@ -11,6 +11,10 @@ public class ComunitatAutonoma {
         this.codi_ine = codi_ine;
     }
 
+    public ComunitatAutonoma(){
+        
+    }
+
     // GETTERS I SETTERS
     public void setId(int comunitat_aut_id){
         this.comunitat_aut_id = comunitat_aut_id;

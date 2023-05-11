@@ -14,6 +14,9 @@ public class Municipi {
         this.codi_ine = codi_ine;
         this.districte = districte;
     }
+    public Municipi(){
+
+    }
     // GETTERS I SETTERS
     public void setId(int id){
         this.id = id;
