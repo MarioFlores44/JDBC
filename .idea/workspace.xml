@@ -9,13 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7de8604e-49f5-416a-9f9c-9e0d0082e91b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/JDBC-DAO/src/MODELO/Candidat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JDBC-DAO/src/MODELO/ComunitatAutonoma.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JDBC-DAO/src/MODELO/Municipi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JDBC-DAO/src/MODELO/Persona.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JDBC-DAO/src/MODELO/Provincia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JDBC-DAO/src/MODELO/Candidatures.java" beforeDir="false" afterPath="$PROJECT_DIR$/JDBC-DAO/src/MODELO/Candidatura.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JDBC-DAO/src/MODELO/MODELO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +35,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Sergi/IdeaProjects/JDBC/JDBC-DAO/src/MODELO",
+    "last_opened_file_path": "C:/Users/Sergi/IdeaProjects/JDBC/JDBC-DAO",
     "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }

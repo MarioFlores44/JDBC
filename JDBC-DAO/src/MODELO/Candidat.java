@@ -15,7 +15,9 @@ public class Candidat {
         this.numOrdre = numOrdre;
         this.tipus = tipus;
     }
+    public Candidat(){
 
+    }
     // GETTERS I SETTERS
     public void setId(int id){
         this.id = id;
