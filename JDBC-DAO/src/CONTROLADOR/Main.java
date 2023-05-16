@@ -6,6 +6,8 @@ import com.mysql.cj.x.protobuf.MysqlxExpr;
 
 public class Main {
 
+    static int opcionMenu;
+    static int opcioSubMenu;
     static CandidaturaDAODB candidaturaDAODB;
     public static void main(String[] args) {
         programa();
@@ -24,7 +26,6 @@ public class Main {
     }
 
     public static void menu() {
-        int opcionMenu;
         do {
             opcionMenu = vst.menu();
             switch (opcionMenu) {
@@ -58,8 +59,7 @@ public class Main {
         } while (opcionMenu >= 1 && opcionMenu <= 6);
     }
 
-    public static void subMenu(Object tabla) {
-        int opcioSubMenu;
+    public static void subMenu(int taula) {
         do {
             opcioSubMenu = vst.subMenu();
             switch (opcioSubMenu){
