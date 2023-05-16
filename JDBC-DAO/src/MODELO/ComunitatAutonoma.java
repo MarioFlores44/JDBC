@@ -5,8 +5,7 @@ public class ComunitatAutonoma {
     private String nom;
     private String codi_ine;
 
-    public ComunitatAutonoma(int comunitat_aut_id, String nom, String codi_ine){
-        this.comunitat_aut_id = comunitat_aut_id;
+    public ComunitatAutonoma(String nom, String codi_ine){
         this.nom = nom;
         this.codi_ine = codi_ine;
     }

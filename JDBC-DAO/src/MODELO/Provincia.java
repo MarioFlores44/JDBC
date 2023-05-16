@@ -7,8 +7,7 @@ public class Provincia {
     private String codi_ine;
     private int numEscons;
 
-    public Provincia(int id, int CA, String nom, String codi_ine, int numEscons){
-        this.id = id;
+    public Provincia(int CA, String nom, String codi_ine, int numEscons){
         this.nom = nom;
         this.CA = CA;
         this.codi_ine = codi_ine;

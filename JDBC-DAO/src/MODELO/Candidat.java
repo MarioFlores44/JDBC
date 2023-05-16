@@ -7,8 +7,7 @@ public class Candidat {
     private int provincia;
     private int numOrdre;
     private String tipus;
-    public Candidat(int id, int candidatura, int persona, int provincia, int numOrdre, String tipus){
-        this.id = id;
+    public Candidat(int candidatura, int persona, int provincia, int numOrdre, String tipus){
         this.candidatura = candidatura;
         this.persona = persona;
         this.provincia = provincia;

@@ -1,5 +1,7 @@
 package VISTA;
 
+import MODELO.*;
+
 import java.util.Scanner;
 
 public class vst {

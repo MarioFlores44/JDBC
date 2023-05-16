@@ -1,14 +1,13 @@
 package CONTROLADOR;
 
 import MODELO.*;
-import VISTA.vst;
+import VISTA.*;
 import com.mysql.cj.x.protobuf.MysqlxExpr;
 
 public class Main {
 
     static int opcionMenu;
     static int opcioSubMenu;
-    static CandidaturaDAODB candidaturaDAODB;
     public static void main(String[] args) {
         programa();
     }
@@ -30,23 +29,22 @@ public class Main {
             opcionMenu = vst.menu();
             switch (opcionMenu) {
                 case 1:
-                    //ComunintatAutonomeDAODB ca = new ComunintatsAutonomeDAODB();
+                    subMenu(1);
                     break;
                 case 2:
-                    //ProvinciaDAODB p = new ProvinciaDAODB();
+                    subMenu(2);
                     break;
                 case 3:
-                    //MunicipiDAODB m = new MunicipiDAODB();
+                    subMenu(3);
                     break;
                 case 4:
-                    //PersonaDAODB p = new PersonaDAODB();
+                    subMenu(4);
                     break;
                 case 5:
-                    CandidaturaDAODB c = new CandidaturaDAODB();
-
+                    subMenu(5);
                     break;
                 case 6:
-                    //CandidateDAODB c = new CandidateDAODB();
+                    subMenu(6);
                     break;
                 case 0:
                     vst.cerrarConexion();
@@ -64,12 +62,91 @@ public class Main {
             opcioSubMenu = vst.subMenu();
             switch (opcioSubMenu){
                 case 1:
-                    //tabla.create();
-                    //O como contra opcion, crear una funcion con otro Switch
+                    crear(taula);
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    break;
+                case 0:
+                    vst.cerrarConexion();
+                    JDBC.closeCon();
+                    System.exit(0);
+                default:
+                    System.out.println("Opción no válida");
                     break;
             }
-        } while (opcioSubMenu >= 1 && opcioSubMenu <= 8);
+        } while (opcioSubMenu >= 1 && opcioSubMenu <= 7);
     }
 
+    public static void crear (int taula) {
+        switch (taula){
+            case 1:
+                ComunitatAutonomaDAODB caDao = new ComunitatAutonomaDAODB();
+                ComunitatAutonoma ca = vstCA.crearComunitatAutonoma();
+                try {
+                    caDao.create(ca);
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+                break;
+            case 2:
+                ProvinciaDAODB provDao = new ProvinciaDAODB();
+                Provincia prov = vstProv.crearProvincia();
+                try {
+                    provDao.create(prov);
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+                break;
+            case 3:
+                MunicipiDAODB munDao = new MunicipiDAODB();
+                Municipi mun = vstMun.crearMunicipi();
+                try {
+                    munDao.create(mun);
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+                break;
+            case 4:
+                PersonaDAODB perDao = new PersonaDAODB();
+                Persona per = vstPer.crearPersona();
+                try {
+                    perDao.create(per);
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+                break;
+            case 5:
+                CandidaturaDAODB canDao = new CandidaturaDAODB();
+                Candidatura can = vstCandidatura.crearCandidatura();
+                try {
+                    canDao.create(can);
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+                break;
+            case 6:
+                CandidatDAODB candDao = new CandidatDAODB();
+                Candidat cand = vstCandidat.crearCandidat();
+                try {
+                    candDao.create(cand);
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+                break;
+        }
 
+        // TODO: Resto de opciones del subMenu
+    }
 }

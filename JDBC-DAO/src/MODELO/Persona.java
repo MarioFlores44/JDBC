@@ -8,8 +8,7 @@ public class Persona {
     private String sexe;
     private String data_naixament;
     private String dni;
-    public Persona(int id, String nom, String cog1, String cog2, String sexe, String data_naixament, String dni){
-        this.id = id;
+    public Persona(String nom, String cog1, String cog2, String sexe, String data_naixament, String dni){
         this.nom = nom;
         this.cog1 = cog1;
         this.cog2 = cog2;
