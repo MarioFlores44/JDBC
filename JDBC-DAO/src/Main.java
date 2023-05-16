@@ -1,3 +1,4 @@
+import CONTROLADOR.ctrl;
 import MODELO.Candidatura;
 import MODELO.CandidaturaDAODB;
 import MODELO.JDBC;
@@ -5,8 +6,9 @@ import MODELO.JDBC;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
-        // TODO Menú para mostrar tablas, seleccionarlas, y ver que opciones tengo a la hora de seleccionarlas
+    public static void main(String[] args) throws InterruptedException {
+        ctrl.programa();
+        /*
         try {
             JDBC.openCon("192.168.56.103", "prog_UF6", "perepi", "pastanaga");
             CandidaturaDAODB candidaturaDAODB = new CandidaturaDAODB();
@@ -30,5 +32,6 @@ public class Main {
         } catch (Exception e) {
             System.out.println(e);
         }
+        */
     }
 }

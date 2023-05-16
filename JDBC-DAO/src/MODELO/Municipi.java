@@ -41,6 +41,7 @@ public class Municipi {
     public String getDistricte() { return this.districte; }
     @Override
     public String toString(){
-        return "id:" + id + "| nom:" + nom + "| Provincia:" + provincia + "| codi ine:" + codi_ine + "| districte:" + districte;
+        System.out.printf("municipi_id: %2d | nom: %100s | codi_ine: %3s | provincia_id: %2d | districte: %5s\n", id, nom, codi_ine, provincia, districte);
+        return null;
     }
 }

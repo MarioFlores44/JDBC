@@ -42,7 +42,7 @@ public class PersonaDAODB implements DAODB<Persona>{
                 c.setNom(rs.getString("nom"));
                 c.setCog1(rs.getString("cog1"));
                 c.setCog2(rs.getString("cog2"));
-                c.setSexe(rs.getString("sexe"));
+                c.setSexe(Persona.sexe.valueOf(rs.getString("sexe")));
                 c.setData_naixament(rs.getString("data_naixement"));
                 c.setDni(rs.getString("dni"));
             }
@@ -137,7 +137,7 @@ public class PersonaDAODB implements DAODB<Persona>{
                 c.setNom(rs.getString("nom"));
                 c.setCog1(rs.getString("cog1"));
                 c.setCog2(rs.getString("cog2"));
-                c.setSexe(rs.getString("sexe"));
+                c.setSexe(Persona.sexe.valueOf(rs.getString("sexe")));
                 c.setData_naixament(rs.getString("data_naixement"));
                 c.setDni(rs.getString("dni"));
                 registros.add(c);

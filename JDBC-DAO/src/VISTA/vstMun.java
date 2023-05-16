@@ -14,6 +14,7 @@ public class vstMun {
         m.setCodi_ine(scan.nextLine());
         System.out.println("Introduce el ID de la provincia del municipio");
         m.setProvincia(scan.nextInt());
+        scan.nextLine();
         System.out.println("Introduce el distrito del municipio");
         m.setDistricte(scan.nextLine());
         return m;

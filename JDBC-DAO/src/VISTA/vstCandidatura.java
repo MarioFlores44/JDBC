@@ -10,6 +10,7 @@ public class vstCandidatura {
         Candidatura c = new Candidatura();
         System.out.println("Introduce el ID de la elección de la candidatura");
         c.setEleccioId(scan.nextInt());
+        scan.nextLine();
         System.out.println("Introduce el código de la candidatura");
         c.setCodiCandidatura(scan.nextLine());
         System.out.println("Introduce el nombre corto de la candidatura");

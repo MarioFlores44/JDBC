@@ -10,6 +10,7 @@ public class vstProv {
         Provincia p = new Provincia();
         System.out.println("Introduce el ID de la comunidad autonoma de la provincia");
         p.setCA(scan.nextInt());
+        scan.nextLine();
         System.out.println("Introduce el nombre de la provincia");
         p.setNom(scan.nextLine());
         System.out.println("Introduce el código INE de la provincia");

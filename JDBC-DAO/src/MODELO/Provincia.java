@@ -41,6 +41,7 @@ public class Provincia {
     public int getNumEscons() { return this.numEscons; }
     @Override
     public String toString(){
-        return "id:" + id + "| nom:" + nom + "| CCAA:" + CA + "| codi ine:" + codi_ine + "| num Escons:" + numEscons;
+        System.out.printf("provincia_id: %2d | comunitat_aut_id: %2d | nom: %45s | codi_ine: %2s | numEscons: %5d\n", id, CA, nom, codi_ine, numEscons);
+        return null;
     }
 }

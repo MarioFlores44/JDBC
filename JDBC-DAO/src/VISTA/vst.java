@@ -69,7 +69,28 @@ public class vst {
     }
 
     public static int pedirId() {
-        System.out.println("Introduce el ID del registro a buscar");
+        System.out.println("Introduce el ID del registro objetivo");
         return scan.nextInt();
+    }
+
+    public static void actualizar(){
+        System.out.println("Para actualizar, necesitarás el ID del registro objetivo y los nuevos datos (tamibén " +
+                "tendrás que introducir los que no cambian)");
+    }
+
+    public static void existe() {
+        System.out.println("El registro existe");
+    }
+
+    public static void noExiste() {
+        System.out.println("El registro no existe");
+    }
+
+    public static void contar(int contador) {
+        System.out.println("Hay " + contador + " registros");
+    }
+
+    public static void listaVacia() {
+        System.out.println("No hay registro a listar");
     }
 }

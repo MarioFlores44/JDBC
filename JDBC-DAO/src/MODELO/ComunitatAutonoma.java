@@ -35,6 +35,7 @@ public class ComunitatAutonoma {
     }
     @Override
     public String toString(){
-        return "id:" + comunitat_aut_id + "| nom:" + nom + "| codi ine:" + codi_ine;
+        System.out.printf("comunitat_aut_id: %2d | nom: %45s | codi_ine: %2s\n", comunitat_aut_id, nom, codi_ine);
+        return null;
     }
 }

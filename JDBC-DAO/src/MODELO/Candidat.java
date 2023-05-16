@@ -56,6 +56,7 @@ public class Candidat {
     }
     @Override
     public String toString(){
-        return "id:" + id + "| candidatura:" + candidatura + "| persona:" + persona + "| provincia:" + provincia + "| numOrdre:" + numOrdre + "| tipus:" + tipus;
+        System.out.printf("candidat_id: %2d | candidatura_id: %2d | persona_id: %2d | provincia_id: %2d | num_ordre: %10d | tipus: %2s\n", id, candidatura, persona, provincia, numOrdre, tipus);
+        return null;
     }
 }

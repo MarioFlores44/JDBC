@@ -15,7 +15,7 @@ public class vstPer {
         System.out.println("Introduce el segundo apellido de la persona");
         p.setCog2(scan.nextLine());
         System.out.println("Introduce el sexo (M/F) de la persona");
-        p.setSexe(scan.nextLine());
+        p.setSexe(Persona.sexe.valueOf(scan.nextLine()));
         System.out.println("Introduce la fecha de nacimiento de la persona (YYYY-MM-DD)");
         p.setData_naixament(scan.nextLine());
         System.out.println("Introduce el DNI de la persona");
