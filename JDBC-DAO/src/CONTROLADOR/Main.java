@@ -2,7 +2,6 @@ package CONTROLADOR;
 
 import MODELO.*;
 import VISTA.*;
-import com.mysql.cj.x.protobuf.MysqlxExpr;
 
 public class Main {
 
@@ -62,9 +61,10 @@ public class Main {
             opcioSubMenu = vst.subMenu();
             switch (opcioSubMenu){
                 case 1:
-                    crear(taula);
+                    crearRegistro(taula);
                     break;
                 case 2:
+                    leerRegistro(taula);
                     break;
                 case 3:
                     break;
@@ -89,8 +89,8 @@ public class Main {
         } while (opcioSubMenu >= 1 && opcioSubMenu <= 7);
     }
 
-    public static void crear (int taula) {
-        switch (taula){
+    public static void crearRegistro(int taula) {
+        switch (taula) {
             case 1:
                 ComunitatAutonomaDAODB caDao = new ComunitatAutonomaDAODB();
                 ComunitatAutonoma ca = vstCA.crearComunitatAutonoma();
@@ -146,7 +146,37 @@ public class Main {
                 }
                 break;
         }
+    }
 
         // TODO: Resto de opciones del subMenu
-    }
+
+        public static void leerRegistro (int taula) {
+            switch (taula) {
+                case 1:
+                    ComunitatAutonomaDAODB caDao = new ComunitatAutonomaDAODB();
+                    caDao.read(vst.pedirId());
+                    break;
+                case 2:
+                    ProvinciaDAODB provDao = new ProvinciaDAODB();
+                    provDao.read(vst.pedirId());
+                    break;
+                case 3:
+                    MunicipiDAODB munDao = new MunicipiDAODB();
+                    munDao.read(vst.pedirId());
+                    break;
+                case 4:
+                    PersonaDAODB perDao = new PersonaDAODB();
+                    perDao.read(vst.pedirId());
+                    break;
+                case 5:
+                    CandidaturaDAODB canDao = new CandidaturaDAODB();
+                    canDao.read(vst.pedirId());
+                    break;
+                case 6:
+                    CandidatDAODB candDao = new CandidatDAODB();
+                    candDao.read(vst.pedirId());
+                    break;
+            }
+        }
 }
+

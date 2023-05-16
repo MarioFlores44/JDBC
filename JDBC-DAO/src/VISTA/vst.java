@@ -67,4 +67,9 @@ public class vst {
     public static void cerrarConexion() {
         System.out.println("Cerrando conexión...");
     }
+
+    public static int pedirId() {
+        System.out.println("Introduce el ID del registro a buscar");
+        return scan.nextInt();
+    }
 }
