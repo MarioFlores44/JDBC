@@ -2,6 +2,7 @@ package MODELO;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class MunicipiDAODB implements DAODB<Municipi>{
             preparedStmt.setString(4, c.getDistricte());
             preparedStmt.execute();
             return true;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return false;
         }
@@ -42,7 +43,7 @@ public class MunicipiDAODB implements DAODB<Municipi>{
                 c.setProvincia(rs.getInt("provincia_id"));
                 c.setDistricte(rs.getString("districte"));
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
         }
         return c;
@@ -62,7 +63,7 @@ public class MunicipiDAODB implements DAODB<Municipi>{
             preparedStmt.execute();
 
             return true;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return false;
         }
@@ -80,7 +81,7 @@ public class MunicipiDAODB implements DAODB<Municipi>{
             preparedStmt.execute();
 
             return true;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return false;
         }
@@ -96,7 +97,7 @@ public class MunicipiDAODB implements DAODB<Municipi>{
 
             ResultSet rs = preparedStmt.executeQuery();
             return rs.next();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return false;
         }
@@ -112,7 +113,7 @@ public class MunicipiDAODB implements DAODB<Municipi>{
             if (rs.next()) {
                 return rs.getInt(1);
             } else return 0;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return 0;
         }
@@ -134,7 +135,7 @@ public class MunicipiDAODB implements DAODB<Municipi>{
                 c.setDistricte(rs.getString("districte"));
                 registros.add(c);
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
         }
         return registros;

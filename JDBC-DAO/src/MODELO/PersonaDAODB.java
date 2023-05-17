@@ -2,6 +2,7 @@ package MODELO;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class PersonaDAODB implements DAODB<Persona>{
             preparedStmt.setString(6, c.getDni());
             preparedStmt.execute();
             return true;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return false;
         }
@@ -46,7 +47,7 @@ public class PersonaDAODB implements DAODB<Persona>{
                 c.setData_naixament(rs.getString("data_naixement"));
                 c.setDni(rs.getString("dni"));
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
         }
         return c;
@@ -68,7 +69,7 @@ public class PersonaDAODB implements DAODB<Persona>{
             preparedStmt.execute();
 
             return true;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return false;
         }
@@ -86,7 +87,7 @@ public class PersonaDAODB implements DAODB<Persona>{
             preparedStmt.execute();
 
             return true;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return false;
         }
@@ -102,7 +103,7 @@ public class PersonaDAODB implements DAODB<Persona>{
 
             ResultSet rs = preparedStmt.executeQuery();
             return rs.next();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return false;
         }
@@ -118,7 +119,7 @@ public class PersonaDAODB implements DAODB<Persona>{
             if (rs.next()) {
                 return rs.getInt(1);
             } else return 0;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return 0;
         }
@@ -142,7 +143,7 @@ public class PersonaDAODB implements DAODB<Persona>{
                 c.setDni(rs.getString("dni"));
                 registros.add(c);
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
         }
         return registros;

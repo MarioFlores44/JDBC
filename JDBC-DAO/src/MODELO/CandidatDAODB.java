@@ -2,6 +2,7 @@ package MODELO;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class CandidatDAODB implements DAODB<Candidat>{
             preparedStmt.setString(5, c.getTipus());
             preparedStmt.execute();
             return true;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return false;
         }
@@ -44,7 +45,7 @@ public class CandidatDAODB implements DAODB<Candidat>{
                 c.setNumOrdre(rs.getInt("num_ordre"));
                 c.setTipus(rs.getString("tipus"));
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
         }
         return c;
@@ -65,7 +66,7 @@ public class CandidatDAODB implements DAODB<Candidat>{
             preparedStmt.execute();
 
             return true;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return false;
         }
@@ -83,7 +84,7 @@ public class CandidatDAODB implements DAODB<Candidat>{
             preparedStmt.execute();
 
             return true;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return false;
         }
@@ -99,7 +100,7 @@ public class CandidatDAODB implements DAODB<Candidat>{
 
             ResultSet rs = preparedStmt.executeQuery();
             return rs.next();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return false;
         }
@@ -115,7 +116,7 @@ public class CandidatDAODB implements DAODB<Candidat>{
             if (rs.next()) {
                 return rs.getInt(1);
             } else return 0;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return 0;
         }
@@ -138,7 +139,7 @@ public class CandidatDAODB implements DAODB<Candidat>{
                 c.setTipus(rs.getString("tipus"));
                 registros.add(c);
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
         }
         return registros;

@@ -3,12 +3,15 @@ package CONTROLADOR;
 import MODELO.*;
 import VISTA.*;
 
+import java.util.Scanner;
+
 public class ctrl {
+    static Scanner scan = new Scanner(System.in);
 
     static int opcionMenu;
     static int opcioSubMenu;
 
-    public static void programa() throws InterruptedException {
+    public static void programa() {
         conexion();
         menu();
     }
@@ -21,9 +24,10 @@ public class ctrl {
         JDBC.openCon(ip, bd, usuari, pswd);
     }
 
-    public static void menu() throws InterruptedException {
+    public static void menu() {
         do {
             opcionMenu = vst.menu();
+            System.out.println();
             switch (opcionMenu) {
                 case 1:
                     subMenu(1);
@@ -54,9 +58,10 @@ public class ctrl {
         } while (opcionMenu >= 1 && opcionMenu <= 6);
     }
 
-    public static void subMenu(int taula) throws InterruptedException {
+    public static void subMenu(int taula) {
         do {
             opcioSubMenu = vst.subMenu();
+            System.out.println();
             switch (opcioSubMenu){
                 case 1:
                     ctrlCrear.crearRegistro(taula);
@@ -91,7 +96,11 @@ public class ctrl {
             }
             System.out.println();
             System.out.println("----------------------------------------------");
-            Thread.sleep(5000);
+            if (opcioSubMenu != 8) {
+                System.out.println("\n\tPulsa ENTER para continuar");
+                scan.nextLine();
+            }
+            System.out.println();
         } while (opcioSubMenu >= 1 && opcioSubMenu <= 7);
     }
 }

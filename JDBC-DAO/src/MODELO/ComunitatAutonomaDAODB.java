@@ -2,6 +2,7 @@ package MODELO;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +18,7 @@ public class ComunitatAutonomaDAODB implements DAODB<ComunitatAutonoma>{
             preparedStmt.setString(2, c.getCodi_ine());
             preparedStmt.execute();
             return true;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return false;
         }
@@ -38,7 +39,7 @@ public class ComunitatAutonomaDAODB implements DAODB<ComunitatAutonoma>{
                 c.setNom(rs.getString("nom"));
                 c.setCodi_ine(rs.getString("codi_ine"));
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
         }
         return c;
@@ -56,7 +57,7 @@ public class ComunitatAutonomaDAODB implements DAODB<ComunitatAutonoma>{
             preparedStmt.execute();
 
             return true;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return false;
         }
@@ -74,7 +75,7 @@ public class ComunitatAutonomaDAODB implements DAODB<ComunitatAutonoma>{
             preparedStmt.execute();
 
             return true;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return false;
         }
@@ -90,7 +91,7 @@ public class ComunitatAutonomaDAODB implements DAODB<ComunitatAutonoma>{
 
             ResultSet rs = preparedStmt.executeQuery();
             return rs.next();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return false;
         }
@@ -106,7 +107,7 @@ public class ComunitatAutonomaDAODB implements DAODB<ComunitatAutonoma>{
             if (rs.next()) {
                 return rs.getInt(1);
             } else return 0;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return 0;
         }
@@ -115,7 +116,7 @@ public class ComunitatAutonomaDAODB implements DAODB<ComunitatAutonoma>{
     @Override
     public List<ComunitatAutonoma> all() {
         List<ComunitatAutonoma> registros = new ArrayList<>();
-        String query = "SELECT * FROM candidatures";
+        String query = "SELECT * FROM comunitats_autonomes";
         try {
             PreparedStatement preparedStmt = JDBC.con.prepareStatement(query);
             ResultSet rs = preparedStmt.executeQuery();
@@ -126,7 +127,7 @@ public class ComunitatAutonomaDAODB implements DAODB<ComunitatAutonoma>{
                 c.setCodi_ine(rs.getString("codi_ine"));
                 registros.add(c);
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
         }
         return registros;

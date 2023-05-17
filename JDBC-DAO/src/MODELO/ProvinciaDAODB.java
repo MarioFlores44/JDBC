@@ -2,6 +2,7 @@ package MODELO;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class ProvinciaDAODB implements DAODB<Provincia>{
             preparedStmt.setInt(4, c.getNumEscons());
             preparedStmt.execute();
             return true;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return false;
         }
@@ -42,7 +43,7 @@ public class ProvinciaDAODB implements DAODB<Provincia>{
                 c.setCodi_ine(rs.getString("codi_ine"));
                 c.setNumEscons(rs.getInt("num_escons"));
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
         }
         return c;
@@ -60,7 +61,7 @@ public class ProvinciaDAODB implements DAODB<Provincia>{
             preparedStmt.execute();
 
             return true;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return false;
         }
@@ -78,7 +79,7 @@ public class ProvinciaDAODB implements DAODB<Provincia>{
             preparedStmt.execute();
 
             return true;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return false;
         }
@@ -94,7 +95,7 @@ public class ProvinciaDAODB implements DAODB<Provincia>{
 
             ResultSet rs = preparedStmt.executeQuery();
             return rs.next();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return false;
         }
@@ -110,7 +111,7 @@ public class ProvinciaDAODB implements DAODB<Provincia>{
             if (rs.next()) {
                 return rs.getInt(1);
             } else return 0;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return 0;
         }
@@ -132,7 +133,7 @@ public class ProvinciaDAODB implements DAODB<Provincia>{
                 c.setNumEscons(rs.getInt("num_escons"));
                 registros.add(c);
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
         }
         return registros;

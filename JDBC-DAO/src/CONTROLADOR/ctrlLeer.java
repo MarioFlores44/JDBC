@@ -8,27 +8,27 @@ public class ctrlLeer {
         switch (taula) {
             case 1:
                 ComunitatAutonomaDAODB caDao = new ComunitatAutonomaDAODB();
-                caDao.read(vst.pedirId());
+                caDao.read(vst.pedirId()).toString();
                 break;
             case 2:
                 ProvinciaDAODB provDao = new ProvinciaDAODB();
-                provDao.read(vst.pedirId());
+                provDao.read(vst.pedirId()).toString();
                 break;
             case 3:
                 MunicipiDAODB munDao = new MunicipiDAODB();
-                munDao.read(vst.pedirId());
+                munDao.read(vst.pedirId()).toString();
                 break;
             case 4:
                 PersonaDAODB perDao = new PersonaDAODB();
-                perDao.read(vst.pedirId());
+                perDao.read(vst.pedirId()).toString();
                 break;
             case 5:
                 CandidaturaDAODB canDao = new CandidaturaDAODB();
-                canDao.read(vst.pedirId());
+                canDao.read(vst.pedirId()).toString();
                 break;
             case 6:
                 CandidatDAODB candDao = new CandidatDAODB();
-                candDao.read(vst.pedirId());
+                candDao.read(vst.pedirId()).toString();
                 break;
         }
     }

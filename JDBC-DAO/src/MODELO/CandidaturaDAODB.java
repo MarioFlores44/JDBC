@@ -22,7 +22,7 @@ public class CandidaturaDAODB implements DAODB<Candidatura>{
             preparedStmt.setString(7, c.getCodiAcNacional());
             preparedStmt.execute();
             return true;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return false;
         }
@@ -48,7 +48,7 @@ public class CandidaturaDAODB implements DAODB<Candidatura>{
                 c.setCodiAcCA(rs.getString("codi_acumulacio_ca"));
                 c.setCodiAcNacional(rs.getString("codi_acumulacio_nacional"));
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
         }
         return c;
@@ -72,7 +72,7 @@ public class CandidaturaDAODB implements DAODB<Candidatura>{
             preparedStmt.execute();
 
             return true;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return false;
         }
@@ -90,7 +90,7 @@ public class CandidaturaDAODB implements DAODB<Candidatura>{
             preparedStmt.execute();
 
             return true;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return false;
         }
@@ -108,7 +108,7 @@ public class CandidaturaDAODB implements DAODB<Candidatura>{
             if (rs.next()) {
                 return true;
             } else return false;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return false;
         }
@@ -124,7 +124,7 @@ public class CandidaturaDAODB implements DAODB<Candidatura>{
             if (rs.next()) {
                 return rs.getInt(1);
             } else return 0;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
             return 0;
         }
@@ -149,7 +149,7 @@ public class CandidaturaDAODB implements DAODB<Candidatura>{
                 c.setCodiAcNacional(rs.getString("codi_acumulacio_nacional"));
                 registros.add(c);
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
         }
         return registros;
