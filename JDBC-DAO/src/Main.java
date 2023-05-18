@@ -8,7 +8,6 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         ctrl.programa();
-        // TODO: Arreglar función de Leer
         /*
         try {
             JDBC.openCon("192.168.56.103", "prog_UF6", "perepi", "pastanaga");
