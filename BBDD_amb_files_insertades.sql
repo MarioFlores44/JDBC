@@ -19,6 +19,18 @@ SET time_zone = "+00:00";
 
 --
 -- Base de datos: `prog_uf6`
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `prog_UF6` DEFAULT CHARACTER SET utf8 ;
+USE `prog_UF6` ;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`comunitats_autonomes`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `prog_UF6`.`comunitats_autonomes` ;
+
 --
 
 -- --------------------------------------------------------
