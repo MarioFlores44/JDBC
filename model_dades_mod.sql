@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `prog_UF6`.`provincies` (
   INDEX `idx_fk_provincies_comunitats_autonomes` (`comunitat_aut_id` ASC)  ,
   CONSTRAINT `fk_provincies_comunitats_autonomes`
     FOREIGN KEY (`comunitat_aut_id`)
-    REFERENCES `mydb`.`comunitats_autonomes` (`comunitat_aut_id`)
+    REFERENCES `prog_UF6`.`comunitats_autonomes` (`comunitat_aut_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
